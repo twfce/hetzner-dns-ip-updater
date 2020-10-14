@@ -1,0 +1,9 @@
+{
+  "zones" : {
+    "2fce.de" : { 
+      "records" : [
+        "@", "www", "test"
+      ]
+    }
+  }
+}

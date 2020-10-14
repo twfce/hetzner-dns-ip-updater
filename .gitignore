@@ -159,3 +159,6 @@ tags
 # Persistent undo
 [._]*.un~
 
+# Custom
+.remember
+config.json
