@@ -20,12 +20,12 @@ def updateDNSRecords(ip):
             registered_record = next((rr for rr in registered_records if rr["name"] == record), None)
             if registered_record:
                 print ("{color}{timestamp} | [{record}.{zone}] Already registered. Going to update record{reset}".format(color=fg(3), timestamp=datetime.now(), record=record, zone=zone["name"], reset=attr(0)))
-                api.updateRecord(recordId=registered_record["id"], zoneId=zone["id"], name=registered_record["name"], value=ip)
+                api.updateRecord(recordId=registered_record["id"], zoneId=zone["id"], name=registered_record["name"], value=ip, ttl=60)
                 print ("{color}{timestamp} | [{record}.{zone}] Updated{reset}".format(color=fg(2), timestamp=datetime.now(), record=record, zone=zone["name"], reset=attr(0)))
             else:
                 print ("{color}{timestamp} | [{record}.{zone}] Not registered. Going to create new record{reset}".format(color=fg(3), timestamp=datetime.now(), record=record, zone=zone["name"], reset=attr(0)))
 
-                api.createRecord(zoneId=zone["id"], name=record, value=ip)
+                api.createRecord(zoneId=zone["id"], name=record, value=ip, ttl=60)
                 print ("{color}{timestamp} | [{record}.{zone}] Created{reset}".format(color=fg(2), timestamp=datetime.now(), record=record, zone=zone["name"], reset=attr(0)))
 
 def checkIpChanged(report):
