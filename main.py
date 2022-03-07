@@ -56,7 +56,7 @@ def checkIpChanged(report):
 def onMQTTConnect(client, userdata, flags, rc):
     if rc == 0:
         print ("{color}{timestamp} | [+] Connected to MQTT broker (Return code: {rc}){reset}".format(color=fg(2), timestamp=datetime.now(), rc=rc, reset=attr(0)))
-        client.publish("home/public-ip-changer", "Hello World! I'm waiting for reports.")
+        client.publish("{topic}/hello".format(topic = mqttTopic), "Hello World! I'm waiting for reports.")
     else:
         print ("{color}{timestamp} | [-] Not connected to MQTT broker (Return code: {rc}){reset}".format(color=fg(1), timestamp=datetime.now(), rc=rc, reset=attr(0)))
 
