@@ -9,3 +9,5 @@ services:
       - MQTT_PASSWORD      
       - MQTT_BASE_TOPIC=${MQTT_BASE_TOPIC}/ip
       - HDNS_TOKEN
+    volumes:
+      - ./config.json:/app/config.json
