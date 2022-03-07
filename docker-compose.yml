@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  hdns-ip-updater:
+    build: ./
+    environment:
+      - MQTT_BROKER
+      - MQTT_USERNAME
+      - MQTT_PASSWORD      
+      - MQTT_BASE_TOPIC=${MQTT_BASE_TOPIC}/ip
+      - HDNS_TOKEN
