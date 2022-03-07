@@ -89,7 +89,7 @@ if __name__ == "__main__":
     mqttUsername = os.environ["MQTT_USERNAME"]
     mqttPassword = os.environ["MQTT_PASSWORD"]
     mqttPort = 1883 if "MQTT_PORT" not in os.environ else os.environ["MQTT_PORT"]
-    mqttTopic = "home/ip" if "MQTT_TOPIC" not in os.environ else os.environ["MQTT_TOPIC"]
+    mqttTopic = "home/report" if "MQTT_TOPIC" not in os.environ else os.environ["MQTT_TOPIC"]
    
     config = json.loads(open("config.json").read())
     main()
