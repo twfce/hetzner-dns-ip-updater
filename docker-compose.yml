@@ -3,6 +3,7 @@ version: "3"
 services:
   hdns-ip-updater:
     build: ./
+    restart: always
     environment:
       - MQTT_BROKER
       - MQTT_USERNAME
